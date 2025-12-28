@@ -1,0 +1,58 @@
+1)Who developed Python and why was it created? Explain one major 
+difference between python and c in terms of program execution.
+Ans : Python was developed by Guido Van Rassum it was created to address the issues found in the ABC Language and make programming easy.
+difference between Python and c in terms of program execution is that Python executes the program 
+line by line where as c reads the entire program and then executes the program.
+
+2)Explain the python build process starting from .py file to execution. Mention the role of 
+    a)Pthon interpreter 
+    b)Bytecode
+    c)PVM
+Ans: Source Code : developer creates a .py file and wrties code in it .
+Lexical anaylsis : The python interpreter scans the code and breaks it into tokens.
+Parsing : These tokens are parsed and transformed into Abstract Syntax Tree  here it checks for syntax errors.
+Compilation : the AST is compiled into Python Bytecode(.pyc files). 
+Bytecode : it is a low-level language understandable by the PVM.
+Execution : the Python Virtual Machine (PVM) reads the bytcode and execute it line by line.
+
+3)What is Bytecode in Python? where is it stored and why does pyton use it?
+Ans: It is a low-level language understandable by the PVM. it is stored in _pycache_ directory as .pyc files.
+python (PVM) uses bytecode to execute the program line by line. 
+
+4)Is Python compiled language or interpreted language?
+justify your answer with execution steps 
+Ans:python is a interpreted language as Python code is executed line by line using python interpreter this makes
+debugging easy because errors are shown immediately.
+
+5)what is the purpose of the _pycache_  folder?
+Ans: its purpose it to store all the .pyc files (i.e Bytecode files)
+
+6)Python is called dynamically typed language. explain this with a short code example.
+Ans: We donot need to declare the datatype of a variable. the dataype is decided at the runtime 
+eg- A = 11    #A is an integer
+    A = "Hi"  #a is a string.
+
+7)Explain why python is considered :
+Platform Independent
+Portable
+Ans:python programs can run on windows, linux, and macos without changing the code. This makes Python 
+portable accross every systems.
+
+8)What do you understand by "Indentation Specific Language"?
+why is indentation mandatory in python?
+Ans : Indentation used to define blocks of code, for grouping is extremely elegant and contributes a lot to the clarity of the average Python program.
+Because there are no begin/end brackets, Python is much less prone to coding-style conflicts. 
+
+9)What will happen if the indentation is not maintained properly? Explain with a small code snippet.
+Ans : If indentation is not maintained it will throw error 
+x=10
+if x>5
+print("X is greater than 5") #this will throw error
+
+10)Python supports multiprogramming paradigms. Name any three paragidms and explain any one.
+Ans:
+1)procedural programming
+2)object-oriented programming
+3)Functional programming
+  Object-oriented programming where we can perfrom Encapsulation, Abstraction, Inheritance, Polymorphism. In python 
+  everything is an object and every object belongs to a class or data type.

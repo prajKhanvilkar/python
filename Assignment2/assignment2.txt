@@ -1,0 +1,55 @@
+1)write a program to display:
+value
+type
+Memory address
+for a variable using appropriate built-in functions.
+Ans: question1.py
+output- 
+
+Jay Ganesh
+<class 'str'>
+4307038640
+
+2)what is the difference between 
+a=10
+b=10 
+and 
+a=[10]
+b=[10]
+explain using id()
+Ans: python reuses immutable objects both varaible point to same ojects 
+where as for mutable seperate memory are allocated 
+output - 
+immutable
+4402573568
+4402573568
+mutable
+4379564352
+4379757120
+
+3)what does the id() function return ?
+is the value returned by id() same for two varaibles holding the same value?
+Ans: id() returns the unique identity (memory address) of an object.
+yes the value returend by id() is same if the 2 varaible are immutable.
+
+4)what is the prupose of getsizeof()?
+Why is memory size different for different datatype?
+Ans: This function returns memory size(in bytes) occupied by the object.
+the memorysize is different for different datatype according to the the type
+ of object allocate the memory and usage of memory.
+
+
+5)predict the output
+a=10
+b=10
+
+print(id(a) ==id(b))
+
+explain why this happens
+Ans: the output is true as python reuses immutable objects memory both varaible point to same ojects 
+
+6)Write a program that accepts two numbers from user and prints their: 
+addition
+subtractions 
+multiplation
+divison

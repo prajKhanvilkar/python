@@ -1,0 +1,10 @@
+a=10
+b=10 
+print("immutable")
+print(id(a))
+print(id(b))    
+a=[10]
+b=[10]
+print("mutable")
+print(id(a))
+print(id(b))
