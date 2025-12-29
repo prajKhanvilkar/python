@@ -53,3 +53,44 @@ addition
 subtractions 
 multiplation
 divison
+Ans: question6.py 
+output 
+Enter First Number
+12
+Enter Second Number
+6
+Sum of number is : 18
+Subtractions Of number is : 6
+Multiplication Of number is : 72
+Division Of number is : 2.0
+
+7)Why does input() function always return string?
+How can you convert it to another data type?
+Ans: Function in python always return a string.
+we can convert it to another data type by adding type before the inpt()
+eg - No2 = int(input())
+
+8)Predict the output :
+x= input("Enter number : ")
+print(type(x))
+Explain the reason
+Ans: Input function in python always return a string. 
+the output will be -
+<class 'str'>
+
+9)Write a prgram to take the users name and age and display: 
+Hello <name> , you will turn <age + 1> next year.
+Ans: Output 
+Enter Your  Name
+prajakta 
+Enter Your  Age
+30
+Hello  prajakta you will turn 31 next year
+
+
+10)What will be the output:
+print("10" + "20")
+print(10 + 20)
+Explain the difference 
+Ans : the first output will be 1020 as we have string value and string gets concatinated
+in second output the values are number and it will add the number the output will be 30
