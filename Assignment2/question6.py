@@ -2,11 +2,11 @@ print("Enter First Number")
 No1 = int(input())
 print("Enter Second Number")
 No2 = int(input())
-sum = int(No1) + int(No2)
+sum = No1 +  No2
 print("Sum of number is :",sum)
-Sub = int(No1) - int(No2)
+Sub = No1 - No2
 print("Subtractions Of number is :",Sub)
-Multi = int(No1) * int(No2)
+Multi = No1 * No2
 print("Multiplication Of number is :",Multi)
-Div = int(No1) / int(No2)
+Div = No1 / No2
 print("Division Of number is :",Div)
