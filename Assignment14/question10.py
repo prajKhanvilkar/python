@@ -1,0 +1,5 @@
+max = lambda a,b,c : a if (a >= b and a >= c) else (b if (b >= c) else c)
+Value = int(input("Enter First Number: "))
+Value1 = int(input("Enter Second Number: "))
+Value2 = int(input("Enter Third Number: "))
+print(max(Value,Value1,Value2))
