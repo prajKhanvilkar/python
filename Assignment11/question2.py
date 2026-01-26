@@ -1,16 +1,5 @@
-def count_digits(number):
-    number = abs(number)   # handle negative numbers
-    count = 0
-
-    if number == 0:
-        return 1
-
-    while number > 0:
-        number = number // 10  
-        count += 1
-    return count
-
-
-num = int(input("Enter a number: "))
-
-print("Count of digits:", count_digits(num))
+num = input("Enter a number: ")
+count = 0
+for dig in num:
+    count += 1
+print("Count of digits:",count)
