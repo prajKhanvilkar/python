@@ -1,0 +1,7 @@
+--------------------------------------------------
+This is a log file created by marvellous automation
+This is a Directory cleaner script
+--------------------------------------------------
+----------------Automation Report-----------------
+This log file is Created at:Sat Feb  7 14:28:58 2026
+--------------------------------------------------

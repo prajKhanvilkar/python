@@ -1,0 +1,9 @@
+--------------------------------------------------
+This is a log file created by marvellous automation
+This is a Directory cleaner script
+--------------------------------------------------
+Deleting file : Marvellous/Demo copy.txt
+Deleting file : Marvellous/marvellous2.txt
+Total 2 duplicate files removed----------------Automation Report-----------------
+This log file is Created at:Sat Feb  7 14:29:19 2026
+--------------------------------------------------
