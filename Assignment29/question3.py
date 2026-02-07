@@ -11,12 +11,10 @@ def directoryScanner(dirName):
         fobj1 = open("Demo.txt","w")
         fobj1.write(data)
         print("Data printed in the new")
+        fobj.close()
+        fobj1.close()
     except FileNotFoundError: 
         print("unable to open a file as there is no such files")
-
-    fobj.close()
-    fobj1.close()
-
 
 def main():
     directoryName = sys.argv[1]
