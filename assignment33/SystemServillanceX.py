@@ -4,8 +4,12 @@ import time
 import os
 import schedule
 import operator
+import smtplib
+from email.message import EmailMessage
 
-def CreateLog(FolderName):
+
+
+def CreateLog(FolderName, EmailAddress=None):
     border = "-" * 50
     Ret = False
     Ret = os.path.exists(FolderName)
@@ -82,6 +86,12 @@ def CreateLog(FolderName):
     fobj.write("-------------------End of Log File---------------"+"\n")
     fobj.write(border+"\n")
     fobj.close()
+    sender_email = "pkhanvilkar2809@gmail.com"  # Replace with your email
+    app_password = "zxbrfnadzkihzkgj"  # Replace with your app password
+    receiver_email = sys.argv[3]
+    subject = "Marvellous Platform Surveillance System Log"
+    body = "Please find the attached log file from Marvellous Platform Surveillance System."
+    send_email(sender_email, app_password, receiver_email, subject, body, fileName)
 
 def processScan():
     listProcess = []
@@ -140,12 +150,35 @@ def format_bytes(bytes_val):
     """
     return f"{bytes_val / (1024 * 1024):.2f} MB"
 
+def send_email(sender, app_password, receiver, subject, body, log_file):
+    msg = EmailMessage()
+    msg['From'] = sender
+    msg['To'] = receiver
+    msg['Subject'] = subject
+    msg.set_content(body)
+
+    # Attach log file
+    with open(log_file, 'rb') as f:
+        msg.add_attachment(
+            f.read(),
+            maintype='application',
+            subtype='octet-stream',
+            filename=os.path.basename(log_file)
+        )
+
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+        smtp.login(sender, app_password)
+        smtp.send_message(msg)
+
+    print("Email sent successfully!")
+   
+
 def main():
     border = "-" * 50
     print(border)
     print("------Marvellous Platform Surveillance System-----")
     print(border)
-    if(len(sys.argv)==2):
+    if(len(sys.argv)==3):
         if(sys.argv[1]=="--h" or sys.argv[1]=="--H"):
             print("This Script is used to")
             print("1: Create Automic Log")
@@ -155,32 +188,36 @@ def main():
             print("5: Stores information about CPU")
             print("6: Stores information about RAM usage")
             print("7: Stores information about secondary Storage")
+            print("8: Stores information about Network usage")
+            print("9: Stores information about top 10 memory consuming processess")
+            print("10: Stores information about number of files opened by processess")
+            print("11: Stores information about number of threads used by processess")
+            print("12: sends email to the receiver with log file attached")
+
 
         elif(sys.argv[1]=="--u" or sys.argv[1]=="--U"):
             print("Use the automation script as")
             print("ScriptName.py TimeInterval Directory Name")
             print("TimeInterval: the time in minutes for periodic scheduling")
             print("Directory Name: Name of Directory to create auto logs")
+            print("Receiver Email: Email of the receiver of the log")
 
         else: 
             print("Unable to proceed as there is no such option")
             print("Please use --h or --u to get more details")
-    #python3 Demo.py 5 Marvellous
-    elif(len(sys.argv) == 3):
-        # print("Inside projects logic")
-        # print("Time Interval : ",sys.argv[1])
-        # print("Directory Name : ",sys.argv[2])
+    #python3 Demo.py 5 Marvellous test@gmail.com
+    elif(len(sys.argv) == 4):
         #Apply Schedular
-        CreateLog(sys.argv[2])
-        # schedule.every(int(sys.argv[1])).minutes.do(CreateLog, sys.argv[2])
-        # print("Platform Surveillance System Started Successfully")
-        # print("Directory Created with Name: ", sys.argv[2])
-        # print("Time Interval in Minutes: ",sys.argv[1])
-        # print("Press control + c to stop the execution")
-        # #wait til abort
-        # while True:
-        #     schedule.run_pending()
-        #     time.sleep(1)
+        schedule.every(int(sys.argv[1])).minutes.do(CreateLog, sys.argv[2],sys.argv[3])
+        print("Platform Surveillance System Started Successfully")
+        print("Directory Created with Name: ", sys.argv[2])
+        print("Time Interval in Minutes: ",sys.argv[1])
+        print("Receiver Email: ",sys.argv[3])
+        print("Press control + c to stop the execution")
+        #wait til abort
+        while True:
+            schedule.run_pending()
+            time.sleep(1)
 
     else:
         print("Invalid Number of Command Line Arguments")
