@@ -36,11 +36,11 @@ print("Y_test shape:", Y_test.shape)
 
 print(border)
  
-print("We are going to use Decission Tree Classifier")
+print("We are going to use Decission Tree Classifier with max depth 1")
  
 model = DecisionTreeClassifier(
                 criterion="gini",
-                max_depth=4,
+                max_depth=1,
                 random_state=42
 )
  
@@ -53,21 +53,73 @@ Y_pred = model.predict(X_test)
  
 print("Model Evaluation(testing) complete")
 
-
-# print("Expected output:")
-# print(Y_test.shape)
-# print(Y_test)
 print("Predicted output:")
 print(Y_pred.shape)
 print(Y_pred)
 
 accuracy = accuracy_score(Y_test, Y_pred)
 print("Accuracy of the model:", accuracy*100)
- 
-cm = confusion_matrix(Y_test, Y_pred)
-print("Confusion Matrix:")
-print(cm)
- 
- 
+
 print("Classification Report:")
 print(classification_report(Y_test, Y_pred))    
+
+print(border)
+ 
+print("We are going to use Decission Tree Classifier with max depth 3")
+ 
+model = DecisionTreeClassifier(
+                criterion="gini",
+                max_depth=3,
+                random_state=42
+)
+ 
+print("Model created successfully!", model)
+
+model.fit(X_train, Y_train)
+print("Model trained Completed!")
+
+Y_pred = model.predict(X_test)
+ 
+print("Model Evaluation(testing) complete")
+
+print("Predicted output:")
+print(Y_pred.shape)
+print(Y_pred)
+
+accuracy = accuracy_score(Y_test, Y_pred)
+print("Accuracy of the model:", accuracy*100)
+
+print("Classification Report:")
+print(classification_report(Y_test, Y_pred))    
+
+print(border)
+ 
+print("We are going to use Decission Tree Classifier with max depth None")
+ 
+model = DecisionTreeClassifier(
+                criterion="gini",
+                max_depth=None,
+                random_state=42
+)
+ 
+print("Model created successfully!", model)
+
+model.fit(X_train, Y_train)
+print("Model trained Completed!")
+
+Y_pred = model.predict(X_test)
+ 
+print("Model Evaluation(testing) complete")
+
+print("Predicted output:")
+print(Y_pred.shape)
+print(Y_pred)
+
+accuracy = accuracy_score(Y_test, Y_pred)
+print("Accuracy of the model:", accuracy*100)
+
+print("Classification Report:")
+print(classification_report(Y_test, Y_pred))    
+
+print(border)
+print("The model with all max depth has the Same accuracy of 93.33% , as the dataset is small and simple")
