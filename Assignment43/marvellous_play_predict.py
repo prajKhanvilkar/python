@@ -87,7 +87,7 @@ def marvellousPredict(DataFile):
     print("Step6 :  Split the data in train and test")
     print(border)
    
-    X_train , X_test, Y_train, Y_test = train_test_split(X,Y,test_size=0.2)
+    X_train , X_test, Y_train, Y_test = train_test_split(X,Y,test_size=0.2,random_state=42)
 
     print("X train:", X_train.shape)
     print("X test:", X_test.shape)
