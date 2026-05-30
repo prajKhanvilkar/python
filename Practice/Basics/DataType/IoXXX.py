@@ -1,0 +1,8 @@
+print("Enter First Number")
+No1 = int(input())
+print("Enter Second Number")
+No2 = int(input())
+print(type(No1))
+print(type(No2))
+sum = int(No1) + int(No2)
+print("Sum Of number is :",sum)
